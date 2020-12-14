@@ -19,7 +19,8 @@
  - [ ] Exibir total de desconto na tela;
  - [ ] Implementar layout para desktop.
  
- Aqui vem o screenshot da aplicação
+ ### Interface visual
+<img alt="screenshot" src="https://github.com/railsonrodrigues/react-salary/blob/main/public/screenshot.jpg" width="300">
  
  
 ### Pré-requisitos
