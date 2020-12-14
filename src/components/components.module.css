@@ -1,0 +1,37 @@
+header {
+  padding: 0 0 25px 0;
+}
+header > h1 {
+  text-align: center;
+}
+header > p {
+  text-align: center;
+  font-size: 18px;
+}
+
+.graphicBar {
+  display: flex;
+  height: 50px;
+}
+.graphicBar > .partOne {
+  background: rgb(30, 179, 42);
+}
+.graphicBar > .partTwo {
+  background: rgb(255, 180, 18);
+}
+.graphicBar > .partThree {
+  background: rgb(248, 81, 81);
+}
+
+.btn {
+  height: 50px;
+  width: 100%;
+  transition-duration: 80ms;
+}
+.btn:active {
+  transform: scale(1.02, 1.02);
+}
+
+form > label {
+  font-size: 15px;
+}
