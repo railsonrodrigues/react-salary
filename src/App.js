@@ -7,9 +7,9 @@ import Header from './components/Header';
 import calcSalary from './helpers/salary/calcSalary';
 
 export default class App extends Component {
-  constructor () {
+  constructor() {
     super();
-    
+
     this.state = {
       currentSalary: 0,
       baseINSS: 0,
@@ -19,15 +19,23 @@ export default class App extends Component {
       discountIRRF: 0,
       percentDiscountIRRF: 0,
       liquidSalary: 0,
-      liquidSalaryPercent: 0
-    }
+      liquidSalaryPercent: 0,
+    };
   }
 
-  handleForm = (event) => {  // criar um componente para form e refatorar essa função
+  handleForm = (event) => {
+    // criar um componente para form e refatorar essa função
     event.preventDefault();
 
     const salaryValue = event.target[0].value;
-    const { inssFormatted, irrfFormatted, salLiquidoFormatted, salLiquidoPercent, discountPercentINSS, discountPercentIRRF } = calcSalary(salaryValue);
+    const {
+      inssFormatted,
+      irrfFormatted,
+      salLiquidoFormatted,
+      salLiquidoPercent,
+      discountPercentINSS,
+      discountPercentIRRF,
+    } = calcSalary(salaryValue);
 
     this.setState({
       currentSalary: salaryValue,
@@ -38,40 +46,80 @@ export default class App extends Component {
       discountIRRF: irrfFormatted.discount,
       percentDiscountIRRF: discountPercentIRRF,
       liquidSalary: salLiquidoFormatted,
-      liquidSalaryPercent: salLiquidoPercent
+      liquidSalaryPercent: salLiquidoPercent,
     });
-  }
+  };
 
   render() {
     const {
-      baseINSS, baseIRRF, discountINSS, discountIRRF, liquidSalary,
-      percentDiscountINSS, percentDiscountIRRF, liquidSalaryPercent
+      baseINSS,
+      baseIRRF,
+      discountINSS,
+      discountIRRF,
+      liquidSalary,
+      percentDiscountINSS,
+      percentDiscountIRRF,
+      liquidSalaryPercent,
     } = this.state;
 
     return (
-      <div className={ css.appContainer }>
-        <Header title="React Salary" description="Calcule aqui o seu salário líquido" />
-        <form onSubmit={ this.handleForm }>
-          <Input id={ css.grossSalary } type="number" 
-            description="Seu salário (R$)" readOnly={ false } step="0.01" />
-          <Input id={ css.baseInss } type="text" 
-            description="Base INSS" readOnly={ true } value={ baseINSS } />
-          <Input id={ css.descInss } type="text" 
-            description="Desconto INSS" readOnly={ true } 
-            value={ `${ discountINSS } (${ percentDiscountINSS }%)` } />
-          <Input id={ css.baseIrrf } type="text" 
-            description="Base IRRF" readOnly={ true } value={ baseIRRF } />
-          <Input id={ css.descIrrf } type="text" 
-            description="Desconto IRRF" readOnly={ true } 
-            value={ `${ discountIRRF } (${ percentDiscountIRRF }%)` } />
-          <Input id={ css.liquidSalary } type="text" 
-            description="Salário Líquido" readOnly={ true } 
-            value={ `${ liquidSalary } (${ liquidSalaryPercent }%)` } />
-          <SubmitButton id={ css.submitButton } value="Calcular" />
+      <div className={css.appContainer}>
+        <Header
+          title="React Salary"
+          description="Calcule aqui o seu salário líquido"
+        />
+        <form onSubmit={this.handleForm}>
+          <Input
+            id={css.grossSalary}
+            type="number"
+            description="Seu salário (R$)"
+            readOnly={false}
+            step="0.01"
+          />
+          <Input
+            id={css.baseInss}
+            type="text"
+            description="Base INSS"
+            readOnly={true}
+            value={baseINSS}
+          />
+          <Input
+            id={css.descInss}
+            type="text"
+            description="Desconto INSS"
+            readOnly={true}
+            value={`${discountINSS} (${percentDiscountINSS}%)`}
+          />
+          <Input
+            id={css.baseIrrf}
+            type="text"
+            description="Base IRRF"
+            readOnly={true}
+            value={baseIRRF}
+          />
+          <Input
+            id={css.descIrrf}
+            type="text"
+            description="Desconto IRRF"
+            readOnly={true}
+            value={`${discountIRRF} (${percentDiscountIRRF}%)`}
+          />
+          <Input
+            id={css.liquidSalary}
+            type="text"
+            description="Salário Líquido"
+            readOnly={true}
+            value={`${liquidSalary} (${liquidSalaryPercent}%)`}
+          />
+          <SubmitButton id={css.submitButton} value="Calcular" />
         </form>
-        <Graphic one={ liquidSalaryPercent} two={ percentDiscountINSS } three={ percentDiscountIRRF } />
+        <Graphic
+          one={liquidSalaryPercent}
+          two={percentDiscountINSS}
+          three={percentDiscountIRRF}
+        />
         <hr />
       </div>
-    )
+    );
   }
 }
