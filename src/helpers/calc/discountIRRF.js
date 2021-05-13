@@ -1,24 +1,46 @@
-export default function discountIRRF(valueBase) {
-  // IFs e ELSEs
+const SALARY_RANGES = Object.freeze([
+  {
+    from: 0,
+    to: 1_903.98,
+    rate: 0,
+    toDeduct: 0,
+  },
+  {
+    from: 1_903.99,
+    to: 2_826.65,
+    rate: 0.075,
+    toDeduct: 142.80,
+  },
+  {
+    from: 2_826.66,
+    to: 3_751.05,
+    rate: 0.15,
+    toDeduct: 354.80,
+  },
+  {
+    from: 3_751.06,
+    to: 4_664.68,
+    rate: 0.225,
+    toDeduct: 636.13,
+  },
+  {
+    from: 4_664.69,
+    to: 1_000_000,
+    rate: 0.275,
+    toDeduct: 869.36,
+  },
+]);
 
-  const ranges = [
-    [0, 1903.98, 0, 0.0],
-    [1903.99, 2826.65, 0.075, 142.8],
-    [2826.66, 3751.05, 0.15, 354.8],
-    [3751.06, 4664.68, 0.225, 636.13],
-    [4664.69, 1000000, 0.275, 869.36],
-  ];
-
-  let discount = null;
-  ranges.forEach(([begin, end, rate, deduValue]) => {
-    if (valueBase >= begin && valueBase <= end) {
-      discount = valueBase * rate - deduValue;
-    }
-  });
-
-  return {
-    discount: discount.toFixed(2),
-    baseValue: valueBase,
-    liquidValue: (valueBase - discount).toFixed(2),
-  };
+function checkySalaryRange (value) {
+  const index = SALARY_RANGES.findIndex(({ from, to }) => value >= from && value <= to);
+  return index;
 }
+
+export default function discountIRRF(salaryDiscountedINSS) {
+  const salaryRangeIndex = checkySalaryRange(salaryDiscountedINSS);
+  const { rate, toDeduct } = SALARY_RANGES[salaryRangeIndex];
+
+   return salaryDiscountedINSS * rate - toDeduct;
+}
+
+console.log(discountIRRF(25000))
