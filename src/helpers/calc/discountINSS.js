@@ -1,41 +1,47 @@
-export default function discountINSS(valueBase) {
-  function isRange(value, [limitValue]) {
-    return value >= limitValue;
+const SALARY_RANGES = Object.freeze([
+  {
+    from: 1_100,
+    to: 1_100,
+    rate: 0.075,
+    toDeduct: 0,
+  },
+  {
+    from: 1_100.01,
+    to: 2_203.48,
+    rate: 0.09,
+    toDeduct: 16.5,
+  },
+  {
+    from: 2_203.49,
+    to: 3_305.22,
+    rate: 0.12,
+    toDeduct: 82.61,
+  },
+  {
+    from: 3_305.23,
+    to: 6_433.57,
+    rate: 0.14,
+    toDeduct: 148.72,
+  },
+  {
+    from: 6_433.58,
+    to: 1_000_000,
+    roof: 751.97,
+  },
+])
+
+function checkySalaryRange (value) {
+  const index = SALARY_RANGES.findIndex(({ from, to }) => value >= from && value <= to);
+  return index;
+}
+
+export default function discountINSS(grossSalary) {
+  const salaryRangeIndex = checkySalaryRange(grossSalary);
+  const { rate, toDeduct, roof } = SALARY_RANGES[salaryRangeIndex];
+
+  if (roof) {
+    return roof;
   }
 
-  let totalDiscount = 0;
-  let percentDiscount = 0;
-
-  const ranges = [
-    [1045.0, 0.09],
-    [2089.6, 0.12],
-    [3134.4, 0.14],
-  ];
-
-  if (valueBase > 6101.06) {
-    totalDiscount = 713.1;
-  } else {
-    let index = 0;
-
-    while (ranges[index] && isRange(valueBase, ranges[index])) {
-      if (index === 0) {
-        totalDiscount += 78.38;
-      }
-
-      const [range, rate] = ranges[index];
-      const [nextRange] = ranges[index + 1] ? ranges[index + 1] : [6101.06];
-
-      totalDiscount +=
-        valueBase < nextRange
-          ? (valueBase - range) * rate
-          : (nextRange - range) * rate;
-      index++;
-    }
-  }
-
-  return {
-    discount: totalDiscount.toFixed(2),
-    baseValue: valueBase,
-    liquidValue: (valueBase - totalDiscount).toFixed(2),
-  };
+   return grossSalary * rate - toDeduct;
 }
