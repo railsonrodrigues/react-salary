@@ -1,6 +1,6 @@
 const SALARY_RANGES = Object.freeze([
   {
-    from: 1_100,
+    from: 0,
     to: 1_100,
     rate: 0.075,
     toDeduct: 0,
@@ -37,10 +37,6 @@ function checkySalaryRange (value) {
 
 export default function discountINSS(grossSalary) {
   const salaryRangeIndex = checkySalaryRange(grossSalary);
-
-  if(salaryRangeIndex === -1) {
-    return 0;
-  }
 
   const { rate, toDeduct, roof } = SALARY_RANGES[salaryRangeIndex];
 
