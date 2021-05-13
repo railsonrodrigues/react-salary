@@ -37,6 +37,11 @@ function checkySalaryRange (value) {
 
 export default function discountINSS(grossSalary) {
   const salaryRangeIndex = checkySalaryRange(grossSalary);
+
+  if(salaryRangeIndex === -1) {
+    return 0;
+  }
+
   const { rate, toDeduct, roof } = SALARY_RANGES[salaryRangeIndex];
 
   if (roof) {

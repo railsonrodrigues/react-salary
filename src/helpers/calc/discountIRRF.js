@@ -42,5 +42,3 @@ export default function discountIRRF(salaryDiscountedINSS) {
 
    return salaryDiscountedINSS * rate - toDeduct;
 }
-
-console.log(discountIRRF(25000))
