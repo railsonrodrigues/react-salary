@@ -17,6 +17,9 @@ function subtraction(amount, ...subtrations) {
 }
 
 function percentageOf(totalValue, fractionValue) {
+  if (totalValue === 0) {
+    return 0;
+  }
   return fractionValue * 100 / totalValue;
 }
 
@@ -40,4 +43,4 @@ export default function calcSalary(grossSalary = 0, nDependents = 0, otherDiscou
   }
 }
 
-console.log(calcSalary(22500, 0, 85000));
+console.log(calcSalary())
