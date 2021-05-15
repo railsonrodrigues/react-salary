@@ -1,8 +1,12 @@
-const { format } = new Intl.NumberFormat([], {
+const money = new Intl.NumberFormat('pt-br', {
   style: 'currency',
   currency: 'BRL',
 });
 
-export default function formatNumber(value) {
-  return format(value);
+export function formatMoneyFn(value) {
+  return money.format(value);
+}
+
+export function formatPercentageFn(value) {
+  return `${value.toFixed(1)}%`;
 }
