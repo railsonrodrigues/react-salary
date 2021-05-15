@@ -38,7 +38,7 @@ export default function calcSalary(grossSalary = 0, nDependents = 0, otherDiscou
   const netSalaryPercent = percentageOf(grossSalary, netSalary);
 
   return {
-    inss, irrf, totalDiscount, netSalary,
+    inss, irrf, otherDiscounts, totalDiscount, netSalary,
     inssPercent, irrfPercent, otherDiscountsPercent, totalDiscountPercent, netSalaryPercent
   }
 }
