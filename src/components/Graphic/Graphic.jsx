@@ -1,4 +1,5 @@
 import React from "react";
+import './styles.css';
 
 export default function Graphic(
   netSalary,
@@ -24,6 +25,6 @@ export default function Graphic(
     //   <div className={ css.partTwo } style={ twoBar } ></div>
     //   <div className={ css.partThree } style={ threeBar } ></div>
     // </div>
-    <div>GRÁFICO</div>
+    <div className="graphic"></div>
   );
 }

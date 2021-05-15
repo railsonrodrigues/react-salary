@@ -1,24 +1,35 @@
-import React from 'react';
+import React from "react";
+import "./styles.css";
 
-import Input from "./components/Input/Input";
-import Button from './components/Button/Button';
-import Card from './components/Card/Card';
-import FlatCard from './components/FlatCard/FlatCard';
-import Graphic from './components/Graphic/Graphic';
+import Input from "../../components/Input/Input";
+import Button from "../../components/Button/Button";
+import Card from "../../components/Card/Card";
+import FlatCard from "../../components/FlatCard/FlatCard";
+import Graphic from "../../components/Graphic/Graphic";
 
 export default function App() {
   return (
     <>
-      <Input placeholder="Salário bruto" />
-      <Input placeholder="Número de dependentes" />
-      <Input placeholder="Outros Descontos" />
-      <Button value="Calcular" />
-      <Card title="Salário bruto" value={4500} percentage={70.5} />
-      <Card title="Desconto total" value={320} percentage={29.5} />
-      <FlatCard title="INSS" value={48.50} percentage={4.5} />
-      <FlatCard title="IRRF" value={480.50} percentage={26.5} />
-      <FlatCard title="Outros" value={8.50} percentage={0.5} />
-      <Graphic />
+      <div className="container flexContainer row">
+        <Input placeholder="Salário bruto" />
+        <Input placeholder="Número de dependentes" />
+        <Input placeholder="Outros Descontos" />
+      </div>
+      <div className="container flexContainer row">
+        <Button value="Calcular" />
+      </div>
+      <div className="container flexContainer row">
+        <Card title="Salário bruto" value={4500} percentage={70.5} />
+        <Card title="Desconto total" value={320} percentage={29.5} />
+      </div>
+      <div className="container flexContainer column">
+        <FlatCard title="INSS" value={48.5} percentage={4.5} />
+        <FlatCard title="IRRF" value={480.5} percentage={26.5} />
+        <FlatCard title="Outros" value={8.5} percentage={0.5} />
+      </div>
+      <div className="container flexContainer row">
+        <Graphic />
+      </div>
     </>
   );
 }

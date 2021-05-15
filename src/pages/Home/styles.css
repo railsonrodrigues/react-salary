@@ -1,0 +1,22 @@
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px 0;
+  border: 1px solid #cdcdcd;
+}
+
+.flexContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row {
+  flex-direction: row;
+  gap: 50px;
+}
+
+.column {
+  flex-direction: column;
+  gap: 15px;
+}
