@@ -42,5 +42,3 @@ export default function calcSalary(grossSalary = 0, nDependents = 0, otherDiscou
     inssPercent, irrfPercent, otherDiscountsPercent, totalDiscountPercent, netSalaryPercent
   }
 }
-
-console.log(calcSalary())

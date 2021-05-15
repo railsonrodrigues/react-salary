@@ -1,31 +1,50 @@
-import React from "react";
-import "./styles.css";
+import React, { useState } from "react";
+import "./../../globalStyles.css";
 
-import Input from "../../components/Input/Input";
-import Button from "../../components/Button/Button";
 import Card from "../../components/Card/Card";
 import FlatCard from "../../components/FlatCard/FlatCard";
 import Graphic from "../../components/Graphic/Graphic";
+import Form from "../../components/Form/Form";
+
+import calcSalary from './../../helpers/calc';
 
 export default function App() {
+
+  const [netSalary, setNetSalary] = useState(0);
+  const [totalDiscount, setTotalDiscount] = useState(0);
+  const [inss, setInss] = useState(0);
+  const [irrf, setIrrf] = useState(0);
+  const [otherDiscounts] = useState(0);
+
+  const [netSalaryPercent, setNetSalaryPercent] = useState(0);
+  const [totalDiscountPercent, setTotalDiscountPercent] = useState(0);
+  const [inssPercent, setInssPercent] = useState(0);
+  const [irrfPercent, setIrrfPercent] = useState(0);
+  const [otherDiscountsPercent, setOtherDiscountsPercent] = useState(0);
+
+  const handleSubmitForm = (event) => {
+    event.preventDefault();
+
+    const inputs = Array.from(event.target.querySelectorAll('input'));
+
+    const inputGrossSalary = Number(inputs.find(input => input.id === "grossSalary").value);
+    const inputnDependents = Number(inputs.find(input => input.id === "nDependents").value);
+    const inputOtherDiscounts = Number(inputs.find(input => input.id === "otherDiscounts").value);
+
+    console.log(calcSalary(inputGrossSalary, inputnDependents, inputOtherDiscounts));
+  }
+
   return (
     <>
+      <Form onSubmit={handleSubmitForm} className="container flexContainer row" />
       <div className="container flexContainer row">
-        <Input placeholder="Salário bruto" />
-        <Input placeholder="Número de dependentes" />
-        <Input placeholder="Outros Descontos" />
-      </div>
-      <div className="container flexContainer row">
-        <Button value="Calcular" />
-      </div>
-      <div className="container flexContainer row">
-        <Card title="Salário bruto" value={4500} percentage={70.5} />
-        <Card title="Desconto total" value={320} percentage={29.5} />
+        <Card title="Salário líquido" value={netSalary} percentage={netSalaryPercent} />
+        <Card title="Desconto total" value={totalDiscount} percentage={totalDiscountPercent} />
       </div>
       <div className="container flexContainer column">
-        <FlatCard title="INSS" value={48.5} percentage={4.5} />
-        <FlatCard title="IRRF" value={480.5} percentage={26.5} />
-        <FlatCard title="Outros" value={8.5} percentage={0.5} />
+        <FlatCard title="INSS" value={inss} percentage={inssPercent} />
+        <FlatCard title="IRRF" value={irrf} percentage={irrfPercent} />
+        <FlatCard title="Outros" value={otherDiscounts} percentage={otherDiscountsPercent} />
       </div>
       <div className="container flexContainer row">
         <Graphic />
@@ -35,21 +54,6 @@ export default function App() {
 }
 
 // export default class App extends Component {
-//   // constructor() {
-//   //   super();
-
-//   //   this.state = {
-//   //     currentSalary: 0,
-//   //     baseINSS: 0,
-//   //     discountINSS: 0,
-//   //     percentDiscountINSS: 0,
-//   //     baseIRRF: 0,
-//   //     discountIRRF: 0,
-//   //     percentDiscountIRRF: 0,
-//   //     liquidSalary: 0,
-//   //     liquidSalaryPercent: 0,
-//   //   };
-//   // }
 
 //   handleForm = (event) => {
 //     // criar um componente para form e refatorar essa função
