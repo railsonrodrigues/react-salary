@@ -11,10 +11,12 @@
     "D": "^1.0.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
+    "global": "^4.4.0",
     "prettier": "^2.3.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "serve": "^11.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
