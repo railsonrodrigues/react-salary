@@ -7,6 +7,8 @@ import Graphic from "../../components/Graphic/Graphic";
 import Form from "../../components/Form/Form";
 
 import getResultCalc from './../../helpers/calc/interface/getResult.js';
+import TopMenu from "../../components/TopMenu/TopMenu";
+import { useLocation } from "react-router";
 
 export default function App() {
 
@@ -79,6 +81,7 @@ export default function App() {
 
   return (
     <>
+      <TopMenu pathname={useLocation().pathname} />
       <Form onSubmit={handleSubmitForm} className="container flexContainer row" />
       <div className="container flexContainer row">
         <Card title="Salário líquido" value={netSalary} percentage={netSalaryPercent} />
