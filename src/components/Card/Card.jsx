@@ -7,7 +7,7 @@ const CardWrapper = styled.div`
   align-items: center;
   justify-content: center;
   gap: 15px 0;
-  width: 200px;
+  width: 300px;
   height: 150px;
   border-radius: 5px;
   box-shadow: rgba(206, 25, 230, 0.2) 0px 8px 24px;
@@ -22,7 +22,7 @@ const Title = styled.h3`
 const Amount = styled.span`
   font-size: 32px;
   font-weight: 700;
-  color: #ce19e6;
+  color: ${props => props.balance ? '#ce19e6' : '#e31021'}
 `;
 
 const Percentage = styled.span`
@@ -31,11 +31,11 @@ const Percentage = styled.span`
   color: #818181;
 `;
 
-export default function Card ({ title, value, percentage }) {
+export default function Card ({ title, value, percentage, balance = false }) {
   return (
     <CardWrapper>
       <Title>{ title }</Title>
-      <Amount>{ value }</Amount>
+      <Amount balance={balance}>{ value }</Amount>
       <Percentage>{ percentage }</Percentage>
     </CardWrapper>
   )
