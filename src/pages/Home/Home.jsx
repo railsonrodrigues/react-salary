@@ -84,7 +84,7 @@ export default function App() {
       <TopMenu pathname={useLocation().pathname} />
       <Form onSubmit={handleSubmitForm} className="container flexContainer row" />
       <div className="container flexContainer row">
-        <Card title="Salário líquido" value={netSalary} percentage={netSalaryPercent} />
+        <Card balance title="Salário líquido" value={netSalary} percentage={netSalaryPercent} />
         <Card title="Desconto total" value={totalDiscount} percentage={totalDiscountPercent} />
       </div>
       <div className="container flexContainer column">
