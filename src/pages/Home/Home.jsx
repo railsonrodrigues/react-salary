@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import "./../../globalStyles.css";
-
+import { ContainerWrapper, FlexWrapper } from './styles';
+ 
 import Card from "../../components/Card/Card";
 import FlatCard from "../../components/FlatCard/FlatCard";
 import Graphic from "../../components/Graphic/Graphic";
 import Form from "../../components/Form/Form";
+import Heading from "../../components/Heading/Heading";
 
 import getResultCalc from './../../helpers/calc/interface/getResult.js';
 import TopMenu from "../../components/TopMenu/TopMenu";
@@ -82,19 +83,31 @@ export default function App() {
   return (
     <>
       <TopMenu pathname={useLocation().pathname} />
-      <Form onSubmit={handleSubmitForm} className="container" />
-      <div className="container flexContainer row">
-        <Card balance title="Salário líquido" value={netSalary} percentage={netSalaryPercent} />
-        <Card title="Desconto total" value={totalDiscount} percentage={totalDiscountPercent} />
-      </div>
-      <div className="container flexContainer column">
-        <FlatCard title="INSS" value={inss} percentage={inssPercent} />
-        <FlatCard title="IRRF" value={irrf} percentage={irrfPercent} />
-        <FlatCard title="Outros" value={otherDiscounts} percentage={otherDiscountsPercent} />
-      </div>
-      <div className="container flexContainer row">
+
+      <Heading title="Calcule Seu Salário Líquido" align="center" />
+
+      <ContainerWrapper>
+        <Form onSubmit={handleSubmitForm} />
+      </ContainerWrapper>
+
+      <ContainerWrapper>
+        <FlexWrapper>
+          <Card balance title="Salário líquido" value={netSalary} percentage={netSalaryPercent} />
+          <Card title="Desconto total" value={totalDiscount} percentage={totalDiscountPercent} />
+        </FlexWrapper>
+      </ContainerWrapper>
+
+      <ContainerWrapper>
+        <FlexWrapper column>
+          <FlatCard title="INSS" value={inss} percentage={inssPercent} />
+          <FlatCard title="IRRF" value={irrf} percentage={irrfPercent} />
+          <FlatCard title="Outros" value={otherDiscounts} percentage={otherDiscountsPercent} />
+        </FlexWrapper>
+      </ContainerWrapper>
+
+      <ContainerWrapper>
         <Graphic />
-      </div>
+      </ContainerWrapper>
     </>
   );
 }
