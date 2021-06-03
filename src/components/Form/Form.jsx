@@ -1,16 +1,31 @@
-import React from 'react';
-import './../../globalStyles.css';
+import React from "react";
+import styled from "styled-components";
 
 import Input from "../Input/Input";
 import Button from "../Button/Button";
 
-export default function Form({ onSubmit, className }) {
+const InputWrapper = styled.div`
+  display: flex;
+  margin: 15px 0;
+  gap: 50px;
+`;
+
+const ButtonWrapper = styled.div`
+  width: 30%;
+  margin: 15px auto;
+`;
+
+export default function Form({ onSubmit }) {
   return (
-    <form onSubmit={onSubmit} className={className}>
-      <Input id="grossSalary" placeholder="Salário bruto" />
-      <Input id="nDependents" placeholder="Número de dependentes" />
-      <Input id="otherDiscounts" placeholder="Outros Descontos" />
-      <Button value="Calcular" />
+    <form onSubmit={onSubmit}>
+      <InputWrapper>
+        <Input id="grossSalary" placeholder="Salário bruto" />
+        <Input id="nDependents" placeholder="Número de dependentes" />
+        <Input id="otherDiscounts" placeholder="Outros Descontos" />
+      </InputWrapper>
+      <ButtonWrapper>
+        <Button value="Calcular" />
+      </ButtonWrapper>
     </form>
   );
 }
