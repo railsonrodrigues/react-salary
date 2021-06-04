@@ -5,7 +5,7 @@ import React from 'react'
 import Button from "./Button"
 
 describe('<Button />', () => {
-  it('should render Button', () => {
+  it('should render Button with text', () => {
     render(<Button value="Calcular" />);
 
     expect.assertions(1);
