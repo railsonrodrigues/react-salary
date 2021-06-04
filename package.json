@@ -43,10 +43,5 @@
   },
   "resolutions": {
     "styled-components": "^5"
-  },
-  "jest": {
-    "setupFilesAfterEnv": [
-      "<rootDir>/jest-setup.js"
-    ]
   }
 }
