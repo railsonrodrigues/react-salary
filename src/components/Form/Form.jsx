@@ -15,9 +15,9 @@ const ButtonWrapper = styled.div`
   margin: 15px auto;
 `;
 
-export default function Form({ onSubmit }) {
+export default function Form({ onSubmit, role }) {
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} role={role}>
       <InputWrapper>
         <Input id="grossSalary" placeholder="Salário bruto" />
         <Input id="nDependents" placeholder="Número de dependentes" />
