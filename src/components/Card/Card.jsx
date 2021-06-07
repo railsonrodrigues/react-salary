@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import P from 'prop-types';
 
 const CardWrapper = styled.div`
   display: flex;
@@ -31,7 +32,7 @@ const Percentage = styled.span`
   color: #818181;
 `;
 
-export default function Card ({ title, value, percentage, balance = false }) {
+export default function Card ({ title, value, percentage, balance }) {
   return (
     <CardWrapper>
       <Title>{ title }</Title>
@@ -39,4 +40,14 @@ export default function Card ({ title, value, percentage, balance = false }) {
       <Percentage>{ percentage }</Percentage>
     </CardWrapper>
   )
+}
+
+Card.defaultProps = {
+  balance: false
+}
+
+Card.propTypes = {
+  title: P.string,
+  value: P.number,
+  percentage: P.number,
 }
