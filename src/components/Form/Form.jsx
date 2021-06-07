@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import P from 'prop-types';
 
 import Input from "../Input/Input";
 import Button from "../Button/Button";
@@ -28,4 +29,13 @@ export default function Form({ onSubmit, role }) {
       </ButtonWrapper>
     </form>
   );
+}
+
+Form.defaultProps = {
+  role: ''
+}
+
+Form.propTypes = {
+  onSubmit: P.func.isRequired,
+  role: P.string
 }
