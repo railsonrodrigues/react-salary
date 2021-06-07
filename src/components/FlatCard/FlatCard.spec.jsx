@@ -3,9 +3,15 @@ import '@testing-library/jest-dom'
 import React from 'react';
 import FlatCard from './FlatCard';
 
+const props = {
+  title: "INSS",
+  value: 700,
+  percentage: 30,
+}
+
 describe('<FlatCard />', () => {
   it('should render FlatCard correctly', () => {
-    const {container} = render(<FlatCard title="INSS" value="700" percentage="30" />)
+    const {container} = render(<FlatCard {...props} />)
     const flatCard = container.querySelector('div');
     const titleElement = container.querySelector('h3.sc-dlnjwi');
     const amountElement = container.querySelector('span.sc-gtsrHT');
@@ -17,7 +23,7 @@ describe('<FlatCard />', () => {
     expect(percentageElement).toBeInTheDocument();
   })
   it('should match snapshot', () => {
-    const {container} = render(<FlatCard title="INSS" value="700" percentage="30" />)
+    const {container} = render(<FlatCard {...props} />)
     expect(container.firstChild).toMatchSnapshot();
   })
 })
