@@ -1,4 +1,5 @@
 import React from "react";
+import P from 'prop-types';
 import './styles.css';
 
 export default function Graphic(
@@ -27,4 +28,11 @@ export default function Graphic(
     // </div>
     <div className="graphic"></div>
   );
+}
+
+Graphic.propTypes = {
+  netSalary: P.string.isRequired,
+  inssDiscount: P.string.isRequired,
+  irrfDiscount: P.string.isRequired,
+  otherDiscounts: P.string.isRequired
 }
