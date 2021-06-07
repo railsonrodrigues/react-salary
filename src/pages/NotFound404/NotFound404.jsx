@@ -9,7 +9,7 @@ const ContainerWrapper = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: #333;
-  
+
   h1 {
     font-size: 40px;
     color: #fff;
@@ -20,6 +20,6 @@ export default function NotFound404 () {
   return (
     <ContainerWrapper>
       <h1>Error 404 - Page Not Found</h1>
-    </ContainerWrapper>  
+    </ContainerWrapper>
   )
 }

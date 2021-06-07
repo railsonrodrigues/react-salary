@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ContainerWrapper, FlexWrapper } from './styles';
- 
+
 import Card from "../../components/Card/Card";
 import FlatCard from "../../components/FlatCard/FlatCard";
 import Graphic from "../../components/Graphic/Graphic";
