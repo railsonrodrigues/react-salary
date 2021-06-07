@@ -23,5 +23,5 @@ export default function Button({ value }) {
 }
 
 Button.propTypes = {
-  value: P.string
+  value: P.string.isRequired
 }
