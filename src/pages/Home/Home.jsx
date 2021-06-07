@@ -13,20 +13,20 @@ import { useLocation } from "react-router";
 
 export default function App() {
 
-  const [grossSalary, setGrossSalary] = useState(0);
-  const [nDependents, setnDependents] = useState(0);
-  const [otherDiscounts, setOtherDiscounts] = useState(0);
+  const [grossSalary, setGrossSalary] = useState('0');
+  const [nDependents, setnDependents] = useState('0');
+  const [otherDiscounts, setOtherDiscounts] = useState('0');
 
-  const [netSalary, setNetSalary] = useState(0);
-  const [totalDiscount, setTotalDiscount] = useState(0);
-  const [inss, setInss] = useState(0);
-  const [irrf, setIrrf] = useState(0);
+  const [netSalary, setNetSalary] = useState('0');
+  const [totalDiscount, setTotalDiscount] = useState('0');
+  const [inss, setInss] = useState('0');
+  const [irrf, setIrrf] = useState('0');
 
-  const [netSalaryPercent, setNetSalaryPercent] = useState(0);
-  const [totalDiscountPercent, setTotalDiscountPercent] = useState(0);
-  const [inssPercent, setInssPercent] = useState(0);
-  const [irrfPercent, setIrrfPercent] = useState(0);
-  const [otherDiscountsPercent, setOtherDiscountsPercent] = useState(0);
+  const [netSalaryPercent, setNetSalaryPercent] = useState('0');
+  const [totalDiscountPercent, setTotalDiscountPercent] = useState('0');
+  const [inssPercent, setInssPercent] = useState('0');
+  const [irrfPercent, setIrrfPercent] = useState('0');
+  const [otherDiscountsPercent, setOtherDiscountsPercent] = useState('0');
 
   // like componentDidMount
   useEffect(() => {
@@ -106,7 +106,7 @@ export default function App() {
       </ContainerWrapper>
 
       <ContainerWrapper>
-        <Graphic />
+        <Graphic netSalary={netSalary} inssDiscount={inss} irrfDiscount={irrf} otherDiscounts={otherDiscounts} />
       </ContainerWrapper>
     </>
   );

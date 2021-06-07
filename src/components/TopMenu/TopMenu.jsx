@@ -1,4 +1,5 @@
 import React from 'react';
+import P from 'prop-types';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -44,7 +45,7 @@ const Menu = styled.li`
   }
 `
 
-export default function TopMenu ({ pathname = '' }) {
+export default function TopMenu ({ pathname }) {
   if (pathname === '/home' || pathname === '/account' || pathname === '/about-me') {
     return (
       <NavWrapper>
@@ -66,4 +67,12 @@ export default function TopMenu ({ pathname = '' }) {
       </NavBar>
     </nav>
   )
+}
+
+TopMenu.defaultProps = {
+  pathname: ''
+}
+
+TopMenu.propTypes = {
+  pathname: P.string
 }
