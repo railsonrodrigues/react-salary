@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import P from 'prop-types';
 
 const FlatCardWrapper = styled.div`
   display: flex;
@@ -29,4 +30,10 @@ export default function FlatCard ({ title, value, percentage }) {
       <SecondaryText>{ percentage }</SecondaryText>
     </FlatCardWrapper>
   )
+}
+
+FlatCard.propTypes = {
+  title: P.string.isRequired,
+  value: P.string.isRequired,
+  percentage: P.string.isRequired
 }
