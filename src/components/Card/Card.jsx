@@ -47,7 +47,8 @@ Card.defaultProps = {
 }
 
 Card.propTypes = {
-  title: P.string,
-  value: P.number,
-  percentage: P.number,
+  title: P.string.isRequired,
+  value: P.string.isRequired,
+  percentage: P.string.isRequired,
+  balance: P.bool
 }
