@@ -44,7 +44,7 @@ const Menu = styled.li`
   }
 `
 
-export default function TopMenu ({ pathname }) {
+export default function TopMenu ({ pathname = '' }) {
   if (pathname === '/home' || pathname === '/account' || pathname === '/about-me') {
     return (
       <NavWrapper>
