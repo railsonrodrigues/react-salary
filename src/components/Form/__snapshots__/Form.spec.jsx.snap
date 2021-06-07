@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Form /> should match snapshot 1`] = `
+<form
+  role="form"
+>
+  <div
+    class="sc-dlnjwi hgOEXf"
+  >
+    <input
+      class="sc-bdnxRM dBDSSv"
+      id="grossSalary"
+      placeholder="Salário bruto"
+      type="text"
+    />
+    <input
+      class="sc-bdnxRM dBDSSv"
+      id="nDependents"
+      placeholder="Número de dependentes"
+      type="text"
+    />
+    <input
+      class="sc-bdnxRM dBDSSv"
+      id="otherDiscounts"
+      placeholder="Outros Descontos"
+      type="text"
+    />
+  </div>
+  <div
+    class="sc-hKFxyN fGSqKZ"
+  >
+    <button
+      class="sc-gtsrHT gpeqvW"
+    >
+      Calcular
+    </button>
+  </div>
+</form>
+`;

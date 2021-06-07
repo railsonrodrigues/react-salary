@@ -10,4 +10,8 @@ describe('<Graphic />', () => {
     const graphic = container.querySelector('.graphic');
     expect(graphic).toBeInTheDocument();
   })
+  it('should match snapshot', () => {
+    const {container} = render(<Graphic />)
+    expect(container.firstChild).toMatchSnapshot();
+  })
 })

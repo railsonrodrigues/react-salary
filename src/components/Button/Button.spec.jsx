@@ -13,4 +13,10 @@ describe('<Button />', () => {
     const button = screen.getByRole('button', {name: /calcular/i})
     expect(button).toBeInTheDocument();
   })
+
+  it('should match snapshot', () => {
+    const {container} = render(<Button value="Calcular" />);
+    expect.assertions(1);
+    expect(container.firstChild).toMatchSnapshot();
+  })
 })

@@ -43,4 +43,9 @@ describe('<Form />', () => {
     fireEvent.submit(form);
     expect(fn).toHaveBeenCalledTimes(1);
   })
+  it('should match snapshot', () => {
+    const fn = jest.fn();
+    const { container } = render(<Form onSubmit={fn} role="form" />)
+    expect(container.firstChild).toMatchSnapshot();
+  })
 })

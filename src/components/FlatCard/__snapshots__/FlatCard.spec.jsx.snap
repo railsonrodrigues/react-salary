@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FlatCard /> should match snapshot 1`] = `
+<div
+  class="sc-bdnxRM jPHcVx"
+>
+  <h3
+    class="sc-dlnjwi ctIjkz"
+  >
+    INSS
+  </h3>
+  <span
+    class="sc-gtsrHT YfnJr"
+  >
+    700
+  </span>
+  <span
+    class="sc-gtsrHT kquQli"
+  >
+    30
+  </span>
+</div>
+`;

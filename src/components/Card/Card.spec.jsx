@@ -19,4 +19,9 @@ describe('<Card />', () => {
     expect(amountElement).toBeInTheDocument();
     expect(percentageElement).toBeInTheDocument();
   })
+  it('should match snapshot', () => {
+    const { container } = render(<Card {...props} />);
+
+    expect(container.firstChild).toMatchSnapshot();
+  })
 })

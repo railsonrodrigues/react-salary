@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TopMenu /> should match snapshot 1`] = `
+<nav>
+  <ul
+    class="sc-hKFxyN fIUwqL"
+  >
+    <li
+      class="sc-eCApnc hPmBSK"
+    >
+      <a
+        href="/login"
+      >
+        Login
+      </a>
+    </li>
+  </ul>
+</nav>
+`;

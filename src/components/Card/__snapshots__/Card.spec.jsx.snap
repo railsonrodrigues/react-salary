@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Card /> should match snapshot 1`] = `
+<div
+  class="sc-bdnxRM dDYZfr"
+>
+  <h3
+    class="sc-gtsrHT jsbkKQ"
+  >
+    INSS
+  </h3>
+  <span
+    class="sc-dlnjwi gucxPP"
+  />
+  <span
+    class="sc-hKFxyN heEyz"
+  >
+    30
+  </span>
+</div>
+`;

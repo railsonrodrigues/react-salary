@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Heading /> should match snapshot 1`] = `
+<h1
+  class="sc-bdnxRM kPiEsP"
+>
+  Hello World!
+</h1>
+`;

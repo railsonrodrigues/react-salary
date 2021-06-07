@@ -16,4 +16,8 @@ describe('<FlatCard />', () => {
     expect(amountElement).toBeInTheDocument();
     expect(percentageElement).toBeInTheDocument();
   })
+  it('should match snapshot', () => {
+    const {container} = render(<FlatCard title="INSS" value="700" percentage="30" />)
+    expect(container.firstChild).toMatchSnapshot();
+  })
 })

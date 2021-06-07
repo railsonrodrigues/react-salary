@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Input /> should match snapshot 1`] = `
+<input
+  class="sc-bdnxRM dBDSSv"
+  id="1"
+  placeholder="Digite aqui"
+  type="text"
+/>
+`;

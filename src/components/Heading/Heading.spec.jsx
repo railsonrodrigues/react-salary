@@ -10,4 +10,8 @@ describe('<Heading />', () => {
     expect(heading).toBeInTheDocument();
     expect(heading).toHaveTextContent('Hello World!');
   })
+  it('should match snapshot', () => {
+    const {container} = render(<Heading title="Hello World!" align="center" />)
+    expect(container.firstChild).toMatchSnapshot();
+  })
 })

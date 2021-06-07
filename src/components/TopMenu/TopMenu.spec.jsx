@@ -16,4 +16,12 @@ describe('<TopMenu />', () => {
     const topMenu = screen.getByRole('navigation')
     expect(topMenu).toBeInTheDocument();
   })
+  it('should match snapshot', () => {
+    const { container } = render(
+      <Router>
+        <TopMenu />
+      </Router>
+    )
+    expect(container.firstChild).toMatchSnapshot();
+  })
 })
