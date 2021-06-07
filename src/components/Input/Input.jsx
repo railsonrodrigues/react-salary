@@ -1,4 +1,5 @@
 import React from "react";
+import P from 'prop-types';
 import styled from 'styled-components';
 
 const InputStyle = styled.input`
@@ -20,4 +21,9 @@ const InputStyle = styled.input`
 
 export default function Input({ placeholder, id }) {
   return <InputStyle id={id} type="text" placeholder={placeholder} />;
+}
+
+Input.propTypes = {
+  placeholder: P.string.isRequired,
+  id: P.string.isRequired
 }
