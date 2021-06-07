@@ -9,7 +9,7 @@ describe('<Button />', () => {
     render(<Button value="Calcular" />);
 
     expect.assertions(1);
-
+    
     const button = screen.getByRole('button', {name: /calcular/i})
     expect(button).toBeInTheDocument();
   })

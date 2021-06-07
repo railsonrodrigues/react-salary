@@ -25,7 +25,7 @@ function percentageOf(totalValue, fractionValue) {
 
 export default function calcSalary(grossSalary = 0, nDependents = 0, otherDiscounts = 0) {
   const dependentsCost = discountDependents(nDependents);
-
+  
   const inss = discountINSS(grossSalary);
   const irrf = discountIRRF(subtraction(grossSalary, inss, dependentsCost));
   const totalDiscount = sum(inss, irrf, otherDiscounts);

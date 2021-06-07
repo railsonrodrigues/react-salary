@@ -33,7 +33,7 @@ describe('<Form />', () => {
     const button = screen.getByRole('button', {name: /calcular/i});
     expect(button).toBeInTheDocument();
   })
-
+  
   it('should call function on submit', () => {
     const fn = jest.fn();
 

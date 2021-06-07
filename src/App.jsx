@@ -32,7 +32,7 @@ export default function App () {
         <Route path="/home">
           <HomePage />
         </Route>
-
+        
         <Route path="/about-me">
           <AboutMePage />
         </Route>
