@@ -1,5 +1,6 @@
 import React from "react";
 import styled from 'styled-components';
+import P from 'prop-types';
 
 const ButtonStyle = styled.button`
   border: 2px solid #ce19e6;
@@ -19,4 +20,8 @@ const ButtonStyle = styled.button`
 
 export default function Button({ value }) {
   return <ButtonStyle>{value}</ButtonStyle>;
+}
+
+Button.propTypes = {
+  value: P.string
 }
