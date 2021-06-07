@@ -14,6 +14,11 @@ describe('<Input />', () => {
     expect(input).toHaveAttribute('placeholder', 'Digite aqui');
     expect(input).toHaveAttribute('id', '1');
   })
+  it('should do not render input with pre-value', () => {
+    render(<Input placeholder="Digite aqui" id="1" />)
+    const input = screen.getByPlaceholderText('Digite aqui')
+    expect(input.value).toBe('')
+  })
   it('should match snapshot', () => {
     const { container } = render(<Input placeholder="Digite aqui" id="1" />)
     expect(container.firstChild).toMatchSnapshot();
