@@ -45,6 +45,28 @@ const Menu = styled.li`
   }
 `
 
+const LogoutMenu = styled(Menu)`
+  display: flex;
+  align-items: center;
+  position: absolute;
+  gap: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 25px;
+  width: max-content;
+  height: max-content;
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-image: url('./logout.png');
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+`
+
 export default function TopMenu ({ pathname }) {
   if (pathname === '/home' || pathname === '/account' || pathname === '/about-me') {
     return (
@@ -54,7 +76,7 @@ export default function TopMenu ({ pathname }) {
           <Link to="/home"><Menu>Início</Menu></Link>
           <Link to="/about-me"><Menu>Sobre mim</Menu></Link>
           <Link to="/account"><Menu>Conta</Menu></Link>
-          <Link to="/"><Menu>Logout</Menu></Link>
+          <Link to="/"><LogoutMenu>Logout</LogoutMenu></Link>
         </NavBar>
       </NavWrapper>
     )

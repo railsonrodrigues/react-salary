@@ -82,7 +82,7 @@ export default function App() {
 
   return (
     <>
-      {/* <TopMenu pathname={useLocation().pathname} /> */}
+      <TopMenu pathname={useLocation().pathname} />
 
       <Heading title="Calcule Seu Salário Líquido" align="center" />
 
