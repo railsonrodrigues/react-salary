@@ -75,19 +75,19 @@ export default function App() {
     const inputnDependents = Number(inputs.find(input => input.id === "nDependents").value);
     const inputOtherDiscounts = Number(inputs.find(input => input.id === "otherDiscounts").value);
 
-    setGrossSalary(() => inputGrossSalary);
-    setnDependents(() => inputnDependents);
-    setOtherDiscounts(() => inputOtherDiscounts);
+    setGrossSalary(() => inputGrossSalary.toString());
+    setnDependents(() => inputnDependents.toString());
+    setOtherDiscounts(() => inputOtherDiscounts.toString());
   }
 
   return (
     <>
-      <TopMenu pathname={useLocation().pathname} />
+      {/* <TopMenu pathname={useLocation().pathname} /> */}
 
       <Heading title="Calcule Seu Salário Líquido" align="center" />
 
       <ContainerWrapper>
-        <Form onSubmit={handleSubmitForm} />
+        <Form onSubmit={handleSubmitForm} role="form" />
       </ContainerWrapper>
 
       <ContainerWrapper>

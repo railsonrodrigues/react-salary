@@ -1,0 +1,168 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HomePage /> should match snapshot 1`] = `
+<div>
+  <h1
+    class="sc-crzoAE dKaBpI"
+  >
+    Calcule Seu Salário Líquido
+  </h1>
+  <div
+    class="sc-bdnxRM iewkLq"
+  >
+    <form
+      role="form"
+    >
+      <div
+        class="sc-kEqXSa kaeJao"
+      >
+        <input
+          class="sc-pNWdM kIPrmQ"
+          id="grossSalary"
+          placeholder="Salário bruto"
+          type="text"
+        />
+        <input
+          class="sc-pNWdM kIPrmQ"
+          id="nDependents"
+          placeholder="Número de dependentes"
+          type="text"
+        />
+        <input
+          class="sc-pNWdM kIPrmQ"
+          id="otherDiscounts"
+          placeholder="Outros Descontos"
+          type="text"
+        />
+      </div>
+      <div
+        class="sc-iqAclL fJCKud"
+      >
+        <button
+          class="sc-jrsJWt jazCUG"
+        >
+          Calcular
+        </button>
+      </div>
+    </form>
+  </div>
+  <div
+    class="sc-bdnxRM iewkLq"
+  >
+    <div
+      class="sc-gtsrHT iGvWbg"
+    >
+      <div
+        class="sc-dlnjwi eHEsiy"
+      >
+        <h3
+          class="sc-hKFxyN gYuxsg"
+        >
+          Salário líquido
+        </h3>
+        <span
+          class="sc-eCApnc bslhuf"
+        >
+          R$ 0,00
+        </span>
+        <span
+          class="sc-jSFjdj binByy"
+        >
+          0.0%
+        </span>
+      </div>
+      <div
+        class="sc-dlnjwi eHEsiy"
+      >
+        <h3
+          class="sc-hKFxyN gYuxsg"
+        >
+          Desconto total
+        </h3>
+        <span
+          class="sc-eCApnc dHwNeS"
+        >
+          R$ 0,00
+        </span>
+        <span
+          class="sc-jSFjdj binByy"
+        >
+          0.0%
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="sc-bdnxRM iewkLq"
+  >
+    <div
+      class="sc-gtsrHT GcGKx"
+    >
+      <div
+        class="sc-gKAaRy fkoXlF"
+      >
+        <h3
+          class="sc-fujyAs cYyfKX"
+        >
+          INSS
+        </h3>
+        <span
+          class="sc-iCoGMd hCYTca"
+        >
+          R$ 0,00
+        </span>
+        <span
+          class="sc-iCoGMd cuEIYz"
+        >
+          0.0%
+        </span>
+      </div>
+      <div
+        class="sc-gKAaRy fkoXlF"
+      >
+        <h3
+          class="sc-fujyAs cYyfKX"
+        >
+          IRRF
+        </h3>
+        <span
+          class="sc-iCoGMd hCYTca"
+        >
+          R$ 0,00
+        </span>
+        <span
+          class="sc-iCoGMd cuEIYz"
+        >
+          0.0%
+        </span>
+      </div>
+      <div
+        class="sc-gKAaRy fkoXlF"
+      >
+        <h3
+          class="sc-fujyAs cYyfKX"
+        >
+          Outros
+        </h3>
+        <span
+          class="sc-iCoGMd hCYTca"
+        >
+          R$ 0,00
+        </span>
+        <span
+          class="sc-iCoGMd cuEIYz"
+        >
+          0.0%
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="sc-bdnxRM iewkLq"
+  >
+    <div
+      class="graphic"
+    />
+  </div>
+</div>
+`;

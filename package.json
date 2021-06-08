@@ -6,7 +6,7 @@
   "dependencies": {
     "-": "^0.0.1",
     "@testing-library/jest-dom": "^5.13.0",
-    "@testing-library/react": "9.3.2",
+    "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "7.1.2",
     "D": "^1.0.0",
     "eslint-config-prettier": "^8.3.0",
@@ -17,14 +17,14 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1",
+    "react-scripts": "^3.4.1",
     "serve": "^11.3.2",
     "styled-components": "^5.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -44,5 +44,8 @@
   },
   "resolutions": {
     "styled-components": "^5"
+  },
+  "devDependencies": {
+    "jest-environment-jsdom-sixteen": "^2.0.0"
   }
 }
