@@ -18,7 +18,10 @@ const ButtonStyle = styled.button`
   }
 `;
 
-export default function Button({ value }) {
+export default function Button({ onClick = null, value }) {
+  if (onClick) {
+    return <ButtonStyle onClick={onClick}>{value}</ButtonStyle>
+  }
   return <ButtonStyle>{value}</ButtonStyle>;
 }
 
