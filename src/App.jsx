@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import { Routes } from './routes';
+import { AuthProvider } from './Context/authContext';
 
 export default function App () {
 
@@ -10,6 +11,8 @@ export default function App () {
   // }  // ONDE USAR useEffect -> didMount, didUnmout, e didUpdate
 
   return (
-    <Routes />
+    <AuthProvider>
+      <Routes />
+    </AuthProvider>
   )
 }
