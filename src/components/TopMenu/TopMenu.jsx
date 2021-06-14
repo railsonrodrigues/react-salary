@@ -1,7 +1,9 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import P from 'prop-types';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+
+import { Context } from './../../Context/authContext';
 
 const NavWrapper = styled.nav`
   margin-bottom: 50px;
@@ -55,6 +57,7 @@ const LogoutMenu = styled(Menu)`
   right: 25px;
   width: max-content;
   height: max-content;
+  cursor: pointer;
   &::before {
     content: '';
     display: inline-block;
@@ -90,6 +93,13 @@ const LoginMenu = styled(Menu)`
 `
 
 export default function TopMenu ({ pathname }) {
+  const AuthContext = useContext(Context)
+
+  function handleLogout () {
+    setTimeout(() => {
+      AuthContext.handleLogout();
+    }, 500)
+  }
   if (pathname === '/home' || pathname === '/account' || pathname === '/about-me') {
     return (
       <NavWrapper>
@@ -98,7 +108,7 @@ export default function TopMenu ({ pathname }) {
           <Link to="/home"><Menu>Início</Menu></Link>
           <Link to="/about-me"><Menu>Sobre mim</Menu></Link>
           <Link to="/account"><Menu>Conta</Menu></Link>
-          <Link to="/"><LogoutMenu>Logout</LogoutMenu></Link>
+          <LogoutMenu><button onClick={handleLogout}>Logout</button></LogoutMenu>
         </NavBar>
       </NavWrapper>
     )
