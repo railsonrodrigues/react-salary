@@ -1,7 +1,9 @@
-import React from "react";
+import React, {useContext} from "react";
 import Button from "./../../components/Button/Button";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
+
+import { Context } from './../../Context/authContext';
 
 const BoxWrapper = styled.div`
   position: absolute;
@@ -46,6 +48,8 @@ export default function Login() {
     
     return [username, password]
   }
+  
+  const ContextObject = useContext(Context);
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -57,6 +61,7 @@ export default function Login() {
     }
 
     if (user.username === username && user.password === password) {
+      ContextObject.handleLogin();
       history.push('/home')
     } else {
       alert('Usuário ou senha inválida!')

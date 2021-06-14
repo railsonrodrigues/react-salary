@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 import AboutMePage from './pages/AboutMe/AboutMe';
 import AccountPage from './pages/Account/Account';
@@ -7,11 +7,13 @@ import PublicPage from './pages/PublicPage/PublicPage';
 import HomePage from './pages/Home/Home.jsx';
 import NotFound404Page from './pages/NotFound404/NotFound404';
 
-import { isAuthenticated } from './auth';
+import { Context } from './Context/authContext';
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
+  const { authenticated } = useContext(Context)
+
   return <Route {...rest} render={props => 
-    isAuthenticated() ?
+    authenticated ?
       <Component />
       :
       <Redirect to={{ pathname: '/login', state: {from: props.location} }}/>
