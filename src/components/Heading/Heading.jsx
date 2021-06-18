@@ -8,6 +8,7 @@ const Title = styled.h1`
 `;
 
 const Heading = ({title, align}) => {
+  console.log('Heading CHAMDO')
   return <Title align={align}>{title}</Title>
 }
 

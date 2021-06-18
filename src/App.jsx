@@ -6,10 +6,6 @@ import { AuthProvider } from './Context/authContext';
 
 export default function App () {
 
-  // const handleAuth = (stateAuth) => {  // Como fazer autenticação
-  //   setIsLogged(stateAuth);
-  // }  // ONDE USAR useEffect -> didMount, didUnmout, e didUpdate
-
   return (
     <AuthProvider>
       <Routes />

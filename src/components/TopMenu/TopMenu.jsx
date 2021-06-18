@@ -2,6 +2,7 @@ import React, {useContext} from 'react';
 import P from 'prop-types';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { useHistory } from 'react-router-dom';
 
 import { Context } from './../../Context/authContext';
 
@@ -93,12 +94,16 @@ const LoginMenu = styled(Menu)`
 `
 
 export default function TopMenu ({ pathname }) {
+  console.log('TOP MENU CHAMADO')
+  
+  const history = useHistory();
   const AuthContext = useContext(Context)
 
   function handleLogout () {
+    history.push('/')
     setTimeout(() => {
       AuthContext.handleLogout();
-    }, 500)
+    }, 50)
   }
   if (pathname === '/home' || pathname === '/account' || pathname === '/about-me') {
     return (

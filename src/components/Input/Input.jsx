@@ -19,8 +19,8 @@ const InputStyle = styled.input`
   }
 `;
 
-export default function Input({ placeholder, id }) {
-  return <InputStyle id={id} type="text" placeholder={placeholder} />;
+export default function Input({ placeholder, inputRef, id }) {
+  return <InputStyle ref={inputRef} id={id} type="text" placeholder={placeholder} />;
 }
 
 Input.propTypes = {

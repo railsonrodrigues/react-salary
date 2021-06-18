@@ -16,13 +16,14 @@ const ButtonWrapper = styled.div`
   margin: 15px auto;
 `;
 
-export default function Form({ onSubmit, role }) {
+export default function Form({ onSubmit, inputsRefs, role }) {
+  console.log('FORM CHAMADO')
   return (
     <form onSubmit={onSubmit} role={role}>
       <InputWrapper>
-        <Input id="grossSalary" placeholder="Salário bruto" />
-        <Input id="nDependents" placeholder="Número de dependentes" />
-        <Input id="otherDiscounts" placeholder="Outros Descontos" />
+        <Input inputRef={inputsRefs[0]} id="grossSalary" placeholder="Salário bruto" />
+        <Input inputRef={inputsRefs[1]} id="nDependents" placeholder="Número de dependentes" />
+        <Input inputRef={inputsRefs[2]} id="otherDiscounts" placeholder="Outros Descontos" />
       </InputWrapper>
       <ButtonWrapper>
         <Button value="Calcular" />
